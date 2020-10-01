@@ -1,0 +1,45 @@
+﻿@using WebApplication.Models;
+@{
+    Layout = "_Layout";
+    ViewBag.Title = "Справочник модулей";
+    string journalName = "Users";
+}
+<div id="container" style="height=50%"> 
+        <div id="context_@(journalName)" class="contextBT">
+            <div id="toolbar_@(journalName)" class="action_panel" target="#Users_table">
+                <div class="action_buttons">
+
+                    <button id="create_Users" class="btn btn-primary" data-toggle="tooltip" data-placement="right" title="Добавить">
+                        <i class="fas fa-plus"></i>
+                    </button>
+                    <button id="update_Users" class="btn btn-primary" data-toggle="tooltip" data-placement="right" title="Редактировать">
+                        <i class="fas fa-pen"></i>
+                    </button>
+                    <button id="delete_Users" class="btn btn-primary" data-toggle="tooltip" data-placement="right" title="Удалить">
+                        <i class="fas fa-trash"></i>
+                    </button>
+
+                </div>
+            </div>
+
+            <!-- Модальные окна-->
+            <div id="modDialog" class="modal fade">
+                <div id="dialogContent" class="modal-dialog modal-lg">
+                     @Html.Partial("UsersCreateForm") 
+                </div>
+            </div>
+
+
+            <div id="UsersTableContainer" class="table_container">
+                <table id="@(journalName)_table"></table>
+            </div>
+        </div>
+    
+</div>
+
+@section Scripts {
+
+     <script type="text/javascript" src="~/js/Users.js"></script>
+
+}
+

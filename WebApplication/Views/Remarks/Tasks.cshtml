@@ -1,0 +1,51 @@
+﻿@using WebApplication.Models;
+@{ 
+    string journalName = "Tasks";
+}
+
+
+<div id="context_@(journalName)" class="contextBT">
+    <div id="toolbar_@(journalName)" class="action_panel" target="#@(journalName)_table">
+        <div class="action_buttons">
+            
+                <button id="create_@(journalName)" class="btn btn-primary" data-toggle="tooltip" data-placement="right" title="Добавить">
+                    <i class="fas fa-plus"></i>
+                </button>
+                <button id="update_@(journalName)" class="btn btn-primary" data-toggle="tooltip" data-placement="right" title="Редактировать">
+                    <i class="fas fa-pen"></i>
+                </button>
+                <button id="delete_@(journalName)" class="btn btn-primary" data-toggle="tooltip" data-placement="right" title="Удалить">
+                    <i class="fas fa-trash"></i>
+                </button>
+
+                <button id="status0_@(journalName)" class="btn btn-primary" data-toggle="tooltip" data-placement="right" title="Вернуть в черновик">
+                    <i class="fas fa-file"></i>
+                </button>
+
+                <button id="status1_@(journalName)" class="btn btn-primary" data-toggle="tooltip" data-placement="right" title="Пометить как выполненные">
+                    <i class="fas fa-file-upload"></i>
+                </button>
+
+                <button id="status2_@(journalName)" class="btn btn-primary" data-toggle="tooltip" data-placement="right" title="Пометить как не выполненные">
+                    <i class="fas fa-file-download"></i>
+                </button>
+
+                <button id="refresh_@(journalName)" class="btn btn-primary" data-toggle="tooltip" data-placement="right" title="Обновить">
+                    <i class="fa fa-sync"></i>
+                </button>
+            
+        </div>
+
+     
+    </div>
+
+    <div id="modDialog" class="modal fade">
+        <div id="dialogContent" class="modal-dialog">
+            @Html.Partial("TasksCreateForm")
+        </div>
+    </div>
+
+    <div id="@(journalName)TableContainer" class="table_container">
+        <table id="@(journalName)_table"></table>
+    </div>
+</div>

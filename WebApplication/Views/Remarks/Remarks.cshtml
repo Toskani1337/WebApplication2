@@ -1,0 +1,68 @@
+﻿@using WebApplication.Models;
+@{
+    Layout = "_Layout";
+    ViewBag.Title = "Журнал замечаний";
+    string journalName = "Remarks";
+}
+<div id="container">
+    <div id="up_panel">
+        <div id="context_@(journalName)" class="contextBT">
+            <div id="toolbar_@(journalName)" class="action_panel" target="#Remarks_table">
+                <div class="action_buttons">
+
+                    <button id="create_Remarks" class="btn btn-primary" data-toggle="tooltip" data-placement="right" title="Добавить">
+                        <i class="fas fa-plus"></i>
+                    </button>
+                    <button id="update_Remarks" class="btn btn-primary" data-toggle="tooltip" data-placement="right" title="Редактировать">
+                        <i class="fas fa-pen"></i>
+                    </button>
+                    <button id="delete_Remarks" class="btn btn-primary" data-toggle="tooltip" data-placement="right" title="Удалить">
+                        <i class="fas fa-trash"></i>
+                    </button>
+
+
+                </div>
+            </div>
+
+            <!-- Модальные окна-->
+            <div id="modDialog" class="modal fade">
+                <div id="dialogContent" class="modal-dialog modal-lg">
+                    @Html.Partial("RemarksCreateForm")
+                </div>
+            </div>
+
+
+            <div id="RemarksTableContainer" class="table_container">
+                <table id="@(journalName)_table"></table>
+            </div>
+        </div>
+    </div>
+
+    <div id="down_panel">
+        <div id="drag">
+            <div class="line_panel"></div>
+        </div>
+        <div id="down_panel_container">
+            <ul id="tabDetail" class="nav nav-tabs tab">
+                <li class="nav-item action">
+                    <a class="nav-link" data-toggle="tab" href="#panel1" for="#DetailCompensations_table">Задачи</a>
+                </li>
+            </ul>
+
+            <div class="tab-content">
+                <div id="panel1" class="tab-pane">
+                    @Html.Partial("Tasks")
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+
+    <script type="text/javascript" src="~/js/Remarks.js"></script>
+    <script type="text/javascript" src="~/js/Tasks.js"></script>
+
+}
+

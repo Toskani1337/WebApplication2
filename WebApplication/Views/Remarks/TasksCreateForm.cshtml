@@ -1,0 +1,62 @@
+﻿
+@using WebApp.Models
+@model TaskMnemo
+
+@{
+    string SubmitName = ViewBag.SubmitName ?? "Сохранить";
+    string titleForm = ViewBag.titleForm ?? "Задача";
+
+}
+
+@using (Html.BeginForm("", "", FormMethod.Post, new { @class = "modal-content", role = "form", id = "form-type" }))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="modal-header">
+        <h5 class="modal-title">@titleForm</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+
+    @Html.HiddenFor(model => model.id_remark, new { htmlAttributes = new { @class = "form-control form-control-sm" } })
+
+    @Html.HiddenFor(model => model.id_task, new { htmlAttributes = new { @class = "form-control form-control-sm" } })
+
+    <div class="form-horizontal container one-column-form">
+
+        <div class="row">
+            <div class="col">
+                <div class="form-group">
+                    @Html.LabelFor(model => model.doc_date, htmlAttributes: new { @class = "control-label" })
+                    @Html.EditorFor(model => model.doc_date, new { htmlAttributes = new { @class = "form-control form-control-sm datepicker", @type = "datetime" } })
+                    @Html.ValidationMessageFor(model => model.doc_date, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="row">
+            <div class="col">
+                <div class="form-group">
+                    @Html.LabelFor(model => model.text_task, htmlAttributes: new { @class = "control-label" })
+                    @Html.TextAreaFor(model => model.text_task, htmlAttributes: new { @class = "form-control form-control-sm" })
+                    @Html.ValidationMessageFor(model => model.text_task, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="modal-footer">
+        <div class="form-group">
+            <div>
+                <input type="submit" value="@SubmitName" id="submit-Btn" class="btn btn-primary" />
+            </div>
+        </div>
+    </div>
+
+}
+
+

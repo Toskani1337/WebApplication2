@@ -1,0 +1,82 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - WebApplication</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/lib/bootstrap-datetimepicker-master/css/bootstrap-datetimepicker.css" />
+    <link rel="stylesheet" href="~/lib/bootstrap-select-1.13.14/dist/css/bootstrap-select.css" />
+    <link rel="stylesheet" href="~/lib/bootstrap-table-master/bootstrap-table-master/dist/bootstrap-table.css" />
+    <link rel="stylesheet" href="~/lib/fontawesome-free-5.14.0-web/css/all.css" />
+    <link rel="stylesheet" href="~/lib/messagebox/messagebox.css" />
+
+    <link rel="stylesheet" href="~/css/site.css" />
+</head>
+<body>
+    <div class="content flex-item-stretch" style="height: 100% !important; display:flex;
+">
+
+        <div class="container" id="LoginForm" style="justify-content:center!important; display:flex; flex-direction: column; margin-bottom: 250px;">
+            <div class="row" style="justify-content:center!important; ">
+
+                <div class="col-md-offset-3 col-md-6">
+                    <form class="form-horizontal" method="post" action="/Home/Login/">
+                        <span class="heading">Вход</span>
+                        <div class="form-group">
+
+                            <input type="text" class="form-control" id="login" name="login" placeholder="Логин">
+                        </div>
+
+
+
+                        <div class="form-group help">
+                            <input type="password" class="form-control" id="password"  name="password" placeholder="Пароль">
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-default">Войти</button>
+                        </div>
+                    </form>
+
+
+                </div>
+
+
+
+            </div><!-- /.row -->
+
+
+            @if (ViewBag.isError == true)
+            {
+                <div class="error">
+                    Неверное имя пользователя или пароль
+                </div>
+            }
+        </div><!-- /.container -->
+    </div>
+
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/jquery-validation/dist/jquery.validate.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive//jquery.validate.unobtrusive.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/lib/bootstrap-datetimepicker-master/js/bootstrap-datetimepicker.js"></script>
+    <script src="~/lib/bootstrap-datetimepicker-master/js/locales/bootstrap-datetimepicker.ru.js"></script>
+    <script src="~/lib/bootstrap-select-1.13.14/dist/js/bootstrap-select.js"></script>
+    <script src="~/lib/bootstrap-table-master/bootstrap-table-master/dist/bootstrap-table.js"></script>
+    <script src="~/lib/bootstrap-table-master/bootstrap-table-master/dist/locale/bootstrap-table-ru-RU.js"></script>
+    <script src="~/lib/fontawesome-free-5.14.0-web/js/all.js"></script>
+
+    <script src="~/lib/messagebox/messagebox.js"></script>
+
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+    <script src="~/js/moment.js"></script>
+    <script src="~/js/JournalsCommon.js"></script>
+   
+</body>
+</html>

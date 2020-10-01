@@ -1,0 +1,401 @@
+﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
+for details on configuring this project to bundle and minify static web assets. */
+
+a.navbar-brand {
+    white-space: normal;
+    text-align: center;
+    word-break: break-all;
+}
+
+/* Provide sufficient contrast against white background */
+a {
+    color: #0366d6;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #1b6ec2;
+    border-color: #1861ac;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+    color: #fff;
+    background-color: #1b6ec2;
+    border-color: #1861ac;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+    font-size: 14px;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+.border-top {
+    border-top: 1px solid #e5e5e5;
+}
+
+.border-bottom {
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.box-shadow {
+    box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+}
+
+button.accept-policy {
+    font-size: 1rem;
+    line-height: inherit;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    /* min-width: 700px;*/
+}
+
+body {
+    color: #222222;
+    /*background-color: lightblue; /*#e0f4e0*/
+    background-color: #36A4E0;
+    background-size: cover;
+    background-position: center 25%;
+    line-height: 1;
+}
+
+
+
+.content {
+    padding: 1%;
+    background: white;
+    overflow: hidden;
+}
+
+.page_container {
+    height: 100%;
+    width: 100%;
+    padding: 0 10%;
+    display: -webkit-flex;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.success {
+    background-color: lightblue !important;
+}
+
+
+
+/*drag_and_drop panel*/
+#container {
+    width: 100%;
+    height: 100%;
+}
+
+#up_panel {
+    position: relative;
+    top: 0;
+    height: 50%;
+    max-height: 70%;
+    min-height: 30%;
+    width: 100%;
+}
+
+#down_panel {
+    position: relative;
+    height: 50%;
+    max-height: 70%;
+    min-height: 30%;
+    bottom: 0;
+    width: 100%;
+}
+
+#down_panel_container {
+    height: 97%;
+}
+
+
+
+.line_panel {
+    height: 3px;
+    background-color: darkgrey;
+}
+
+
+
+.contextBT {
+    height: 100%;
+}
+
+.table_container {
+    /*padding-top: 10px;*/
+    height: 95%;
+}
+
+#teachers_table_container {
+    height: 100%;
+}
+
+
+
+
+
+
+
+
+
+
+/* Form Style */
+#LoginForm .form-horizontal {
+    background: #fff;
+    padding-bottom: 40px;
+    border-radius: 15px;
+    text-align: center;
+}
+
+    #LoginForm .form-horizontal .heading {
+        display: block;
+        font-size: 35px;
+        font-weight: 700;
+        padding: 35px 0;
+        border-bottom: 1px solid #f0f0f0;
+        margin-bottom: 30px;
+    }
+
+    #LoginForm .form-horizontal .form-group {
+        padding: 0 40px;
+        margin: 0 0 25px 0;
+        position: relative;
+    }
+
+    #LoginForm .form-horizontal .form-control {
+        background: #f0f0f0;
+        border: none;
+        border-radius: 20px;
+        box-shadow: none;
+        padding: 0 20px 0 45px;
+        height: 40px;
+        transition: all 0.3s ease 0s;
+    }
+
+        #LoginForm .form-horizontal .form-control:focus {
+            background: #e0e0e0;
+            box-shadow: none;
+            outline: 0 none;
+        }
+
+    #LoginForm .form-horizontal .form-group i {
+        position: absolute;
+        top: 12px;
+        left: 60px;
+        font-size: 17px;
+        color: #c8c8c8;
+        transition: all 0.5s ease 0s;
+    }
+
+    #LoginForm .form-horizontal .form-control:focus + i {
+        color: #00b4ef;
+    }
+
+    #LoginForm .form-horizontal .fa-question-circle {
+        display: inline-block;
+        position: absolute;
+        top: 12px;
+        right: 60px;
+        font-size: 20px;
+        color: #808080;
+        transition: all 0.5s ease 0s;
+    }
+
+        #LoginForm .form-horizontal .fa-question-circle:hover {
+            color: #000;
+        }
+
+    #LoginForm .form-horizontal .main-checkbox {
+        float: left;
+        width: 20px;
+        height: 20px;
+        background: #11a3fc;
+        border-radius: 50%;
+        position: relative;
+        margin: 5px 0 0 5px;
+        border: 1px solid #11a3fc;
+    }
+
+        #LoginForm .form-horizontal .main-checkbox label {
+            width: 20px;
+            height: 20px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            cursor: pointer;
+        }
+
+            #LoginForm .form-horizontal .main-checkbox label:after {
+                content: "";
+                width: 10px;
+                height: 5px;
+                position: absolute;
+                top: 5px;
+                left: 4px;
+                border: 3px solid #fff;
+                border-top: none;
+                border-right: none;
+                background: transparent;
+                opacity: 0;
+                -webkit-transform: rotate(-45deg);
+                transform: rotate(-45deg);
+            }
+
+        #LoginForm .form-horizontal .main-checkbox input[type=checkbox] {
+            visibility: hidden;
+        }
+
+            #LoginForm .form-horizontal .main-checkbox input[type=checkbox]:checked + label:after {
+                opacity: 1;
+            }
+
+    #LoginForm .form-horizontal .text {
+        float: left;
+        margin-left: 7px;
+        line-height: 20px;
+        padding-top: 5px;
+        text-transform: capitalize;
+    }
+
+    #LoginForm .form-horizontal .btn {
+        float: right;
+        font-size: 14px;
+        color: #fff;
+        background: #00b4ef;
+        border-radius: 30px;
+        padding: 10px 25px;
+        border: none;
+        text-transform: capitalize;
+        transition: all 0.5s ease 0s;
+    }
+
+@media only screen and (max-width: 479px) {
+    #LoginForm .form-horizontal .form-group {
+        padding: 0 25px;
+    }
+
+        #LoginForm .form-horizontal .form-group i {
+            left: 45px;
+        }
+
+    #LoginForm .form-horizontal .btn {
+        padding: 10px 20px;
+    }
+}
+
+
+.error {
+    text-align: center;
+}
+
+.weekend {
+    background-color: rgb(251, 202, 210);
+    /*background-color: rgb(255, 192, 203);*/
+}
+
+.work-gainsboro {
+    background-color: gainsboro;
+}
+
+
+
+.page_container {
+    height: 100%;
+    width: 100%;
+    padding: 0 10%;
+    display: -webkit-flex;
+    display: flex;
+    flex-direction: column;
+}
+
+.page_header {
+    flex: 0 0 auto;
+    -webkit-flex: 0 0 auto;
+    -ms-flex: 0 0 auto;
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+.page_container_row {
+    display: -webkit-flex;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: row;
+    flex: auto;
+    -webkit-flex: auto;
+    -ms-flex: auto;
+    margin: 1rem;
+    align-items: flex-start;
+}
+
+    .page_container_row .dropdown-toggle, .page_container_col > div > button {
+        height: 100%;
+    }
+
+.page_container_col {
+    display: flex;
+}
+/* ---------------- */
+#result_tabel, .result_table {
+    background-color: gainsboro;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+    #result_tabel thead, .result_table thead {
+        text-align: center;
+        text-align: -moz-center;
+        text-align: -webkit-center;
+    }
+
+    #result_tabel td, #result_tabel th, .result_table td, .result_table th {
+        border: 1px solid gray;
+        min-width: 10px;
+    }
+
+    #result_tabel tr:first-child td, .result_table tr:first-child td {
+        border-top: 0px;
+    }
+
+    #result_tabel th, .bottom_sum td, .result_table th {
+        background-color: #44A2D4 !important;
+        color: white;
+    }
+
+    #result_tabel .num, #result_tabel .fio, #result_tabel .grp, #result_tabel .sum {
+        background-color: lightblue !important;
+        color: black;
+    }
+
+    #result_tabel tr:nth-child(odd), .result_table tr:nth-child(odd) {
+        background-color: #f5f5f5;
+    }
+
+    #result_tabel .pupil_table tr, #result_tabel .pupil_table td {
+        height: 3em;
+    }
+
+    #result_tabel tr, #result_tabel td {
+        height: 25px;
+    }
+
+    .result_table td {
+        height: 3rem;
+    }
+
+.margining {
+    margin-left: 1rem;
+}

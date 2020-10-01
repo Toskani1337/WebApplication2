@@ -1,0 +1,103 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - WebApplication</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/lib/bootstrap-datetimepicker-master/css/bootstrap-datetimepicker.css" />
+    <link rel="stylesheet" href="~/lib/bootstrap-datepicker-1.9.0-dist/css/bootstrap-datepicker3.css" />
+    <link rel="stylesheet" href="~/lib/bootstrap-datepicker-1.9.0-dist/css/bootstrap-datepicker3.standalone.css" />
+    <link rel="stylesheet" href="~/lib/bootstrap-select-1.13.14/dist/css/bootstrap-select.css" />
+    <link rel="stylesheet" href="~/lib/bootstrap-table-master/bootstrap-table-master/dist/bootstrap-table.css" />
+    <link rel="stylesheet" href="~/lib/fontawesome-free-5.14.0-web/css/all.css" />
+    <link rel="stylesheet" href="~/lib/messagebox/messagebox.css" />
+
+    <link rel="stylesheet" href="~/css/site.css" />
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+
+            <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Главная страница</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarText">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-dark" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Журналы
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <a class="dropdown-item" text-dark" asp-area="" asp-controller="Remarks" asp-action="Remarks">Журнал замечаний</a>
+                        </div>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-dark" href="#" id="navbarDropdownMenuLink2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Справочники
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink2">
+                            <a class="dropdown-item" text-dark" asp-area="" asp-controller="Subsysteams" asp-action="Subsysteams">Справочник модулей</a>
+                        </div>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-dark" href="#" id="navbarDropdownMenuLink3" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Отчеты
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink3">
+                            <a class="dropdown-item" text-dark" asp-area="" asp-controller="Reports" asp-action="Reports">Незакрытые замечания</a>
+                        </div>
+                    </li>
+
+                    @if (ViewBag.IdUser == 1)
+                    {
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Users" asp-action="Users">Пользователи</a>
+                        </li>
+                    }
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Exit">Выход</a>
+                    </li>
+                </ul>
+
+                <span class="navbar-text">
+                    Пользователь: @ViewBag.Login
+                </span>
+            </div>
+
+
+
+        </nav>
+    </header>
+    <div class="content flex-item-stretch" style="height:90%!important">
+        @RenderBody()
+
+    </div>
+
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/jquery-validation/dist/jquery.validate.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive//jquery.validate.unobtrusive.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/lib/bootstrap-datetimepicker-master/js/bootstrap-datetimepicker.js"></script>
+    <script src="~/lib/bootstrap-datetimepicker-master/js/locales/bootstrap-datetimepicker.ru.js"></script>
+    <script src="~/lib/bootstrap-datepicker-1.9.0-dist/js/bootstrap-datepicker.js"></script>
+    <script src="~/lib/bootstrap-datepicker-1.9.0-dist/locales/bootstrap-datepicker.ru.min.js"></script>
+    <script src="~/lib/bootstrap-select-1.13.14/dist/js/bootstrap-select.js"></script>
+    <script src="~/lib/bootstrap-table-master/bootstrap-table-master/dist/bootstrap-table.js"></script>
+    <script src="~/lib/bootstrap-table-master/bootstrap-table-master/dist/locale/bootstrap-table-ru-RU.js"></script>
+    <script src="~/lib/fontawesome-free-5.14.0-web/js/all.js"></script>
+
+    <script src="~/lib/messagebox/messagebox.js"></script>
+
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+    <script src="~/js/moment.js"></script>
+    <script src="~/js/JournalsCommon.js"></script>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

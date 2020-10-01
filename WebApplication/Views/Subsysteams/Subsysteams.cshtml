@@ -1,0 +1,45 @@
+﻿@using WebApplication.Models;
+@{
+    Layout = "_Layout";
+    ViewBag.Title = "Справочник модулей";
+    string journalName = "Subsysteams";
+}
+<div id="container" style="height=50%"> 
+        <div id="context_@(journalName)" class="contextBT">
+            <div id="toolbar_@(journalName)" class="action_panel" target="#Subsysteams_table">
+                <div class="action_buttons">
+
+                    <button id="create_Subsysteams" class="btn btn-primary" data-toggle="tooltip" data-placement="right" title="Добавить">
+                        <i class="fas fa-plus"></i>
+                    </button>
+                    <button id="update_Subsysteams" class="btn btn-primary" data-toggle="tooltip" data-placement="right" title="Редактировать">
+                        <i class="fas fa-pen"></i>
+                    </button>
+                    <button id="delete_Subsysteams" class="btn btn-primary" data-toggle="tooltip" data-placement="right" title="Удалить">
+                        <i class="fas fa-trash"></i>
+                    </button>
+
+                </div>
+            </div>
+
+            <!-- Модальные окна-->
+            <div id="modDialog" class="modal fade">
+                <div id="dialogContent" class="modal-dialog modal-lg">
+                     @Html.Partial("SubsysteamsCreateForm") 
+                </div>
+            </div>
+
+
+            <div id="SubsysteamsTableContainer" class="table_container">
+                <table id="@(journalName)_table"></table>
+            </div>
+        </div>
+    
+</div>
+
+@section Scripts {
+
+     <script type="text/javascript" src="~/js/Subsysteams.js"></script>
+
+}
+

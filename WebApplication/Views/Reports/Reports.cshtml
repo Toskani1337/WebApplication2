@@ -1,0 +1,46 @@
+﻿@using WebApplication.Models;
+@{
+    Layout = "_Layout";
+    ViewBag.Title = "Незакрытые замечания";
+    string journalName = "ReportRemark";
+}
+
+<div class="page_container">
+    <div class="page_header">@ViewBag.Title</div>
+
+    <div class="page_container_row" style="flex: none; justify-content:center">
+
+        <div class="page_container_col">
+
+
+            @Html.DropDownList("subsystem", @ViewBag.Subsystem as SelectList, new { @class = "selectpicker", @title = "Выберите модуль" })
+
+
+            <div class="margining">
+                <button type="button" class="btn btn-primary" id="submit_remark">Открыть</button>
+            </div>
+
+            <div class="margining">
+                <button type="button" class="btn btn-primary" id="print">Печать</button>
+            </div>
+
+            @* <div class="margining">
+            <button type="button" class="btn btn-primary" id="export">Экспорт</button>
+        </div>*@
+
+        </div>
+
+    </div>
+
+    <div class="page_container_row" style="overflow:auto">
+        <table id="remark_data_table" class="result_table"></table>
+    </div>
+
+</div>
+
+
+@section Scripts {
+
+    <script type="text/javascript" src="~/js/Reports.js"></script>
+    
+}

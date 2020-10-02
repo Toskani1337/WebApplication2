@@ -42,25 +42,11 @@
 
 
 
-     /*  $('#export').on('click', function () {
+       $('#export').on('click', function () {
 
+                          
+               $.download("/Reports/ExportRemarksData", "subsystem=" + $("#subsystem").val() );
 
-           var checkedIds = tree.getCheckedNodes();
-
-           var getResponseClass ="";
-           $.each(checkedIds, function(index,value){
-               getResponseClass = getResponseClass + "&checkedIds=" + value;
-           });
-
-           var arrayBanks = $("#compens_banks").val();
-
-           var getResponseBank ="";
-           $.each(arrayBanks, function(index,value){
-               getResponseBank = getResponseBank + "&banks=" + value;
-           });
-
-           $.download("/Compensations/ExportCompensReceiversData", "year=" + $("#compens_year").val() + "&period=" + $("#compens_month").val() + getResponseBank + getResponseClass);
-
-       }); */
+       }); 
 
 });

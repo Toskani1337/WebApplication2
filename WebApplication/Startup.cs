@@ -40,7 +40,9 @@ namespace WebApplication
         {
             if (env.IsDevelopment())
             {
-                app.UseDeveloperExceptionPage();
+                app.UseDefaultFiles();
+                app.UseStaticFiles();
+
             }
             else
             {
